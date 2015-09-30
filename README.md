@@ -25,7 +25,16 @@ The Revoo API class provides access to multiple APIs contained within the servic
 
 The example below calls the Conversation API and asks for a list of conversations:
 
+NOTE: although the .NET API wrapper contains methods for all read-operation on the Reevoo API, your ability to access any given method is based on the credentials you supply (the key and secret). If you attempt to access information you do not have access to, you will receive the message, "Request failed with status Forbidden and reason Forbidden.".
+
     var reevooApi = new ReevooApi();
     var response = reevooApi.Conversation.List("D10", "en", "AIPTPDV5700");
 
 The API is discoverable, for example `reevooApi.` will supply an auto-completion list of the kinds of data you can obtain, for example `Reviewable`. Selecting this will provide an auto-completion list of methods, such as `List` or `Detail` available for the data.
+
+## Troubleshooting
+
+Forbidden/Forbidden: You do not have access to the requested data. Check your credentials, and your rights.
+
+NotFound/Not Found: The requested data does not exist. Check your arguments.
+
