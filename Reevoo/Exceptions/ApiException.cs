@@ -3,6 +3,7 @@ using System.Net.Http;
 
 namespace Reevoo.Exceptions
 {
+    [Serializable]
     public class ApiException : ReevooException
     {
         public ApiException(HttpResponseMessage httpResponseMessage) : base(

@@ -2,6 +2,7 @@
 
 namespace Reevoo.Exceptions
 {
+    [Serializable]
     public class ReevooException : ApplicationException
     {
         public ReevooException(string message) : base(message) { }
