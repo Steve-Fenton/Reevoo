@@ -58,7 +58,6 @@
     <Compile Include="Api\OrganisationTests.cs" />
     <Compile Include="Api\ReviewableTests.cs" />
     <Compile Include="Api\ConversationTests.cs" />
-    <Compile Include="Api\TestConfiguration.cs" />
     <Compile Include="Api\ReviewsTests.cs" />
     <Compile Include="Api\CustomerExperienceReviewsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

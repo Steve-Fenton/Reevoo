@@ -1,17 +1,15 @@
 ﻿using System.Configuration;
 
-namespace ReevooTests.Api
+namespace Reevoo
 {
-    public class TestConfiguration
+    public class Configuration
     {
-        public readonly string Trkref;
         public readonly string Key;
         public readonly string Secret;
         public readonly string BaseUri;
 
-        public TestConfiguration()
+        public Configuration()
         {
-            Trkref = ConfigurationManager.AppSettings["Trkref"];
             Key = ConfigurationManager.AppSettings["Key"];
             Secret = ConfigurationManager.AppSettings["Secret"];
             BaseUri = ConfigurationManager.AppSettings["BaseAddress"];

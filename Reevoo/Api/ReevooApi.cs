@@ -8,6 +8,14 @@ namespace Reevoo.Api
         private readonly string Secret;
         private readonly Uri BaseUri;
 
+        public ReevooApi()
+        {
+            var configuration = new Configuration();
+            Key = configuration.Key;
+            Secret = configuration.Secret;
+            BaseUri = new Uri(configuration.BaseUri);
+        }
+
         public ReevooApi(string key, string secret, string baseUri = "https://api.reevoocloud.com/")
         {
             Key = key;

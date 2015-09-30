@@ -7,19 +7,12 @@ namespace ReevooTests.Api
     [TestClass]
     public class ReviewableTests
     {
-        private readonly TestConfiguration _config;
-
-        public ReviewableTests()
-        {
-            _config = new TestConfiguration();
-        }
-
         [TestMethod]
         public void Reviewable_List_ExpectResults()
         {
-            var reevooApi = new ReevooApi(_config.Key, _config.Secret, _config.BaseUri);
+            var reevooApi = new ReevooApi();
 
-            var response = reevooApi.Reviewable.List(_config.Trkref);
+            var response = reevooApi.Reviewable.List("D10");
 
             response.reviewables.Count.ShouldBe(30);
         }
@@ -27,9 +20,9 @@ namespace ReevooTests.Api
         [TestMethod]
         public void Reviewable_ShortFormatList_ExpectResults()
         {
-            var reevooApi = new ReevooApi(_config.Key, _config.Secret, _config.BaseUri);
+            var reevooApi = new ReevooApi();
 
-            var response = reevooApi.Reviewable.ShortFormatList(_config.Trkref);
+            var response = reevooApi.Reviewable.ShortFormatList("D10");
 
             response.reviewables.Count.ShouldBe(89);
         }
@@ -37,9 +30,9 @@ namespace ReevooTests.Api
         [TestMethod]
         public void Reviewable_Detail_ExpectResult()
         {
-            var reevooApi = new ReevooApi(_config.Key, _config.Secret, _config.BaseUri);
+            var reevooApi = new ReevooApi();
 
-            var response = reevooApi.Reviewable.Detail(_config.Trkref, "en", "AIPTPDV5700");
+            var response = reevooApi.Reviewable.Detail("D10", "en", "AIPTPDV5700");
 
             response.name.ShouldBe("Aiptek DV5700");
         }
@@ -47,9 +40,9 @@ namespace ReevooTests.Api
         [TestMethod]
         public void Reviewable_ShortFormatDetail_ExpectResult()
         {
-            var reevooApi = new ReevooApi(_config.Key, _config.Secret, _config.BaseUri);
+            var reevooApi = new ReevooApi();
 
-            var response = reevooApi.Reviewable.ShortFormatDetail(_config.Trkref, "en", "AIPTPDV5700");
+            var response = reevooApi.Reviewable.ShortFormatDetail("D10", "en", "AIPTPDV5700");
 
             response.sku.ShouldBe("AIPTPDV5700");
         }

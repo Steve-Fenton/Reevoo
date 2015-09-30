@@ -7,17 +7,10 @@ namespace ReevooTests.Api
     [TestClass]
     public class OrganisationTests
     {
-        private readonly TestConfiguration _config;
-
-        public OrganisationTests()
-        {
-            _config = new TestConfiguration();
-        }
-
         [TestMethod]
         public void Review_List_ExpectResults()
         {
-            var reevooApi = new ReevooApi(_config.Key, _config.Secret, _config.BaseUri);
+            var reevooApi = new ReevooApi();
 
             var response = reevooApi.Organisation.List();
 
@@ -27,9 +20,9 @@ namespace ReevooTests.Api
         [TestMethod]
         public void Review_Detail_ExpectResult()
         {
-            var reevooApi = new ReevooApi(_config.Key, _config.Secret, _config.BaseUri);
+            var reevooApi = new ReevooApi();
 
-            var response = reevooApi.Organisation.Detail(_config.Trkref);
+            var response = reevooApi.Organisation.Detail("D10");
 
             response.name.ShouldBe("Demo Org 10");
         }
@@ -37,10 +30,10 @@ namespace ReevooTests.Api
         [TestMethod]
         public void Review_Detail_WithBranchCode_ExpectResult()
         {
-            var reevooApi = new ReevooApi(_config.Key, _config.Secret, _config.BaseUri);
+            var reevooApi = new ReevooApi();
 
             // TODO: find a valid branch code
-            var response = reevooApi.Organisation.Detail(_config.Trkref, "A");
+            var response = reevooApi.Organisation.Detail("D10", "A");
 
             response.name.ShouldBe("Demo Org 10");
         }

@@ -7,20 +7,13 @@ namespace ReevooTests.Api
     [TestClass]
     public class ConversationTests
     {
-        private readonly TestConfiguration _config;
-
-        public ConversationTests()
-        {
-            _config = new TestConfiguration();
-        }
-
         [TestMethod]
         public void Conversation_List_ExpectResults()
         {
-            var reevooApi = new ReevooApi(_config.Key, _config.Secret, _config.BaseUri);
+            var reevooApi = new ReevooApi();
 
             // TODO: find valid test arguments
-            var response = reevooApi.Conversation.List(_config.Trkref, "en", "AIPTPDV5700");
+            var response = reevooApi.Conversation.List("D10", "en", "AIPTPDV5700");
 
             response.conversations.Count.ShouldBe(6);
         }
@@ -28,7 +21,7 @@ namespace ReevooTests.Api
         [TestMethod]
         public void Conversation_Detail_ExpectResult()
         {
-            var reevooApi = new ReevooApi(_config.Key, _config.Secret, _config.BaseUri);
+            var reevooApi = new ReevooApi();
 
             var response = reevooApi.Conversation.Detail(223049);
 
