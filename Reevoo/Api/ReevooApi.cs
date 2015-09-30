@@ -23,6 +23,9 @@ namespace Reevoo.Api
             BaseUri = new Uri(baseUri);
         }
 
+        /// <summary>
+        /// Contains methods for retrieving organisation data.
+        /// </summary>
         public OrganisationApi Organisation
         {
             get
@@ -31,6 +34,9 @@ namespace Reevoo.Api
             }
         }
 
+        /// <summary>
+        /// Contains methods for retrieving reviewable data.
+        /// </summary>
         public ReviewableApi Reviewable
         {
             get
@@ -39,6 +45,9 @@ namespace Reevoo.Api
             }
         }
 
+        /// <summary>
+        /// Contains methods for retrieving review data.
+        /// </summary>
         public ReviewApi Review
         {
             get
@@ -47,6 +56,9 @@ namespace Reevoo.Api
             }
         }
 
+        /// <summary>
+        /// Contains methods for retrieving customer experience review data.
+        /// </summary>
         public CustomerExperienceReviewApi CustomerExperienceReview
         {
             get
@@ -55,6 +67,9 @@ namespace Reevoo.Api
             }
         }
 
+        /// <summary>
+        /// Contains methods for retrieving conversation data.
+        /// </summary>
         public ConversationApi Conversation
         {
             get

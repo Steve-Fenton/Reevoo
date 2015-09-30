@@ -8,6 +8,14 @@ namespace Reevoo.Api
     {
         internal ConversationApi(string key, string secret, Uri baseUri) : base(key, secret, baseUri) { }
 
+        /// <summary>
+        /// Returns all the conversations that are associated with a specific product.
+        /// http://reevoo.github.io/docs/reevooapi/conversation/conversation-list/
+        /// </summary>
+        /// <param name="trkref"></param>
+        /// <param name="locale"></param>
+        /// <param name="sku"></param>
+        /// <returns></returns>
         public ConversationListResponse List(string trkref, string locale, string sku)
         {
             var safeTrkref = WebUtility.UrlEncode(trkref);
@@ -20,6 +28,12 @@ namespace Reevoo.Api
             return response;
         }
 
+        /// <summary>
+        /// Returns details for a single conversation.
+        /// http://reevoo.github.io/docs/reevooapi/conversation/conversation-detail/
+        /// </summary>
+        /// <param name="conversationId"></param>
+        /// <returns></returns>
         public ConversationDetailResponse Detail(int conversationId)
         {
             var safeConversationId = WebUtility.UrlEncode(conversationId.ToString());

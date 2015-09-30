@@ -8,6 +8,10 @@ namespace Reevoo.Api
     {
         internal OrganisationApi(string key, string secret, Uri baseUri) : base(key, secret, baseUri) { }
 
+        /// <summary>
+        /// Allow a user to retrieve information for all organisations associated with their API key.
+        /// </summary>
+        /// <returns></returns>
         public OrganisationListResponse List()
         {
             var apiPath = $"v4/organisations/";
@@ -17,6 +21,13 @@ namespace Reevoo.Api
             return response;
         }
 
+        /// <summary>
+        /// Allow a user to retrieve information for a specific organisation.
+        /// Users are only allow to retrieve information for organisations that their API key is assigned to.
+        /// http://reevoo.github.io/docs/reevooapi/organisation/organisation-list/
+        /// </summary>
+        /// <param name="trkref"></param>
+        /// <returns></returns>
         public OrganisationDetailResponse Detail(string trkref)
         {
             var safeTrkref = WebUtility.UrlEncode(trkref);
@@ -27,6 +38,14 @@ namespace Reevoo.Api
             return response;
         }
 
+        /// <summary>
+        /// Allow a user to retrieve information for a specific organisation.
+        /// Users are only allow to retrieve information for organisations that their API key is assigned to.
+        /// http://reevoo.github.io/docs/reevooapi/organisation/organisation-detail/
+        /// </summary>
+        /// <param name="trkref"></param>
+        /// <param name="branchCode"></param>
+        /// <returns></returns>
         public OrganisationDetailResponse Detail(string trkref, string branchCode)
         {
             var safeTrkref = WebUtility.UrlEncode(trkref);

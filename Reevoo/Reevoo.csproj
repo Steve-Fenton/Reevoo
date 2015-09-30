@@ -55,6 +55,8 @@
     <Compile Include="Api\ReviewableApi.cs" />
     <Compile Include="Api\ConversationApi.cs" />
     <Compile Include="Configuration.cs" />
+    <Compile Include="Exceptions\ApiException.cs" />
+    <Compile Include="Exceptions\ReevooException.cs" />
     <Compile Include="Message\ConversationDetailResponse.cs" />
     <Compile Include="Message\ConversationListResponse.cs" />
     <Compile Include="Message\CustomerExperienceReviewDetailResponse.cs" />

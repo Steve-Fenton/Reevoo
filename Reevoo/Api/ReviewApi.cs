@@ -8,6 +8,15 @@ namespace Reevoo.Api
     {
         internal ReviewApi(string key, string secret, Uri baseUri) : base(key, secret, baseUri) { }
 
+        /// <summary>
+        /// A reviewable will have a number of reviews associated with it.
+        /// We aggregate reviews so reviews that have been collected for other organisations may be included.Only published reviews will be included.
+        /// http://reevoo.github.io/docs/reevooapi/review/review-list/
+        /// </summary>
+        /// <param name="trkref"></param>
+        /// <param name="locale"></param>
+        /// <param name="sku"></param>
+        /// <returns></returns>
         public ReviewListResponse List(string trkref, string locale, string sku)
         {
             var safeTrkref = WebUtility.UrlEncode(trkref);
@@ -20,6 +29,13 @@ namespace Reevoo.Api
             return response;
         }
 
+        /// <summary>
+        /// Details for a single review.
+        /// http://reevoo.github.io/docs/reevooapi/review/review-detail/
+        /// </summary>
+        /// <param name="trkref"></param>
+        /// <param name="reviewId"></param>
+        /// <returns></returns>
         public ReviewDetailResponse Detail(string trkref, int reviewId)
         {
             var safeTrkref = WebUtility.UrlEncode(trkref);

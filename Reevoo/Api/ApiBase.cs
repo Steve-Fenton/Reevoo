@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Reevoo.Exceptions;
+using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -22,32 +23,54 @@ namespace Reevoo.Api
 
         protected T GetResponseOfType<T>(string apiPath) where T : class
         {
-            T response = null;
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = BaseUri;
-                client.DefaultRequestHeaders.Authorization = GetAuthorizationHeader();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(APPLICATION_JSON));
-
-                HttpResponseMessage httpResponse = client.GetAsync(apiPath).Result;
-
-                if (httpResponse.IsSuccessStatusCode)
-                {
-                    response = httpResponse.Content.ReadAsAsync<T>().Result;
-                }
-                else
-                {
-                    throw new Exception($"Request failed with status {httpResponse.StatusCode} and reason {httpResponse.ReasonPhrase}");
-                }
+                HttpResponseMessage httpResponse = GetHttpResponse(client, apiPath);
+                ValidateHttpResponse(httpResponse);
+                return httpResponse.Content.ReadAsAsync<T>().Result;
             }
-
-            return response;
         }
 
-        protected AuthenticationHeaderValue GetAuthorizationHeader()
+        private HttpClient GetHttpClient()
+        {
+            var client = new HttpClient
+            {
+                BaseAddress = BaseUri,
+            };
+
+            client.DefaultRequestHeaders.Authorization = GetAuthorizationHeader();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(APPLICATION_JSON));
+
+            return client;
+        }
+
+        private AuthenticationHeaderValue GetAuthorizationHeader()
         {
             var byteArray = Encoding.ASCII.GetBytes($"{Key}:{Secret}");
             return new AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+        }
+
+        private static HttpResponseMessage GetHttpResponse(HttpClient client, string apiPath)
+        {
+            HttpResponseMessage httpResponse = null;
+            try
+            {
+                httpResponse = client.GetAsync(apiPath).Result;
+            }
+            catch (Exception ex)
+            {
+                throw new ApiException(ex);
+            }
+
+            return httpResponse;
+        }
+
+        private static void ValidateHttpResponse(HttpResponseMessage httpResponse)
+        {
+            if (httpResponse.IsSuccessStatusCode == false)
+            {
+                throw new ApiException(httpResponse);
+            }
         }
     }
 }
