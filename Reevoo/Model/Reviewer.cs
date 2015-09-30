@@ -1,12 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
 
 namespace Reevoo.Model
 {
     public class Reviewer
     {
-        public string first_name { get; set; }
-        public string location { get; set; }
-        public string segment { get; set; }
-        public object facebook_avatar_url { get; set; }
+        [JsonProperty(PropertyName = "first_name")]
+        public string FirstName { get; set; }
+
+        [JsonProperty(PropertyName = "location")]
+        public string Location { get; set; }
+
+        [JsonProperty(PropertyName = "segment")]
+        public string Segment { get; set; }
+
+        [JsonProperty(PropertyName = "facebook_avatar_url")]
+        public string FacebookAvatarUrl { get; set; }
     }
 }

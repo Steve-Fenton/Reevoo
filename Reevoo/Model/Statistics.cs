@@ -1,10 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
 
 namespace Reevoo.Model
 {
     public class Statistics
     {
-        public double summation { get; set; }
-        public int respondents { get; set; }
+        [JsonProperty(PropertyName = "summation")]
+        public double Summation { get; set; }
+
+        [JsonProperty(PropertyName = "respondents")]
+        public int Respondents { get; set; }
     }
 }

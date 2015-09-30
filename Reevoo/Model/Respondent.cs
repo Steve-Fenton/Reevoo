@@ -1,10 +1,19 @@
-﻿namespace Reevoo.Model
+﻿using Newtonsoft.Json;
+
+namespace Reevoo.Model
 {
     public class Respondent
     {
-        public string custom_name { get; set; }
-        public string first_name { get; set; }
-        public string surname { get; set; }
-        public string job_title { get; set; }
+        [JsonProperty(PropertyName = "custom_name")]
+        public string CustomName { get; set; }
+
+        [JsonProperty(PropertyName = "first_name")]
+        public string FirstName { get; set; }
+
+        [JsonProperty(PropertyName = "surname")]
+        public string Surname { get; set; }
+
+        [JsonProperty(PropertyName = "job_title")]
+        public string JobTitle { get; set; }
     }
 }

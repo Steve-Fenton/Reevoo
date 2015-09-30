@@ -1,11 +1,15 @@
-﻿using Reevoo.Model;
+﻿using Newtonsoft.Json;
+using Reevoo.Model;
 using System.Collections.Generic;
 
 namespace Reevoo.Message
 {
     public class ReviewableListResponse
     {
-        public Summary summary { get; set; }
-        public List<Reviewable> reviewables { get; set; }
+        [JsonProperty(PropertyName = "summary")]
+        public Summary Summary { get; set; }
+
+        [JsonProperty(PropertyName = "reviewables")]
+        public List<Reviewable> Reviewables { get; set; }
     }
 }

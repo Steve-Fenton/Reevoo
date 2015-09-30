@@ -14,7 +14,7 @@ namespace ReevooTests.Api
 
             var response = reevooApi.Review.List("D10", "en", "AIPTPDV5700");
 
-            response.reviews.Count.ShouldBe(6);
+            response.Reviews.Count.ShouldBe(6);
         }
 
         [TestMethod]
@@ -24,7 +24,7 @@ namespace ReevooTests.Api
 
             var response = reevooApi.Review.Detail("D10", 314609);
 
-            response.overall_score.ShouldBeGreaterThan(0);
+            response.OverallScore.ShouldBeGreaterThan(0);
         }
     }
 }

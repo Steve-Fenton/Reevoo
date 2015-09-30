@@ -15,7 +15,7 @@ namespace ReevooTests.Api
             // TODO: find valid test arguments
             var response = reevooApi.Conversation.List("D10", "en", "AIPTPDV5700");
 
-            response.conversations.Count.ShouldBe(6);
+            response.Conversations.Count.ShouldBe(6);
         }
 
         [TestMethod]
@@ -25,7 +25,7 @@ namespace ReevooTests.Api
 
             var response = reevooApi.Conversation.Detail(223049);
 
-            response.answers.Count.ShouldBeGreaterThan(0);
+            response.Answers.Count.ShouldBeGreaterThan(0);
         }
     }
 }

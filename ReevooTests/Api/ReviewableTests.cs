@@ -14,7 +14,7 @@ namespace ReevooTests.Api
 
             var response = reevooApi.Reviewable.List("D10");
 
-            response.reviewables.Count.ShouldBe(30);
+            response.Reviewables.Count.ShouldBe(30);
         }
 
         [TestMethod]
@@ -24,7 +24,7 @@ namespace ReevooTests.Api
 
             var response = reevooApi.Reviewable.ShortFormatList("D10");
 
-            response.reviewables.Count.ShouldBe(89);
+            response.Reviewables.Count.ShouldBe(89);
         }
 
         [TestMethod]
@@ -34,7 +34,7 @@ namespace ReevooTests.Api
 
             var response = reevooApi.Reviewable.Detail("D10", "en", "AIPTPDV5700");
 
-            response.name.ShouldBe("Aiptek DV5700");
+            response.Name.ShouldBe("Aiptek DV5700");
         }
 
         [TestMethod]
@@ -44,7 +44,7 @@ namespace ReevooTests.Api
 
             var response = reevooApi.Reviewable.ShortFormatDetail("D10", "en", "AIPTPDV5700");
 
-            response.sku.ShouldBe("AIPTPDV5700");
+            response.Sku.ShouldBe("AIPTPDV5700");
         }
     }
 }

@@ -1,10 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace Reevoo.Model
 {
     public class Summary
     {
-        public List<Facet> facets { get; set; }
-        public Pagination pagination { get; set; }
+        [JsonProperty(PropertyName = "Facets")]
+        public List<Facet> Facets { get; set; }
+
+        [JsonProperty(PropertyName = "pagination")]
+        public Pagination Pagination { get; set; }
     }
 }

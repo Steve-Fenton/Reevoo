@@ -1,10 +1,12 @@
-﻿using Reevoo.Model;
+﻿using Newtonsoft.Json;
+using Reevoo.Model;
 using System.Collections.Generic;
 
 namespace Reevoo.Message
 {
     public class CustomerExperienceReviewListResponse
     {
-        public List<CustomerExperienceReview> customer_experience_reviews { get; set; }
+        [JsonProperty(PropertyName = "customer_experience_reviews")]
+        public List<CustomerExperienceReview> CustomerExperienceReviews { get; set; }
     }
 }

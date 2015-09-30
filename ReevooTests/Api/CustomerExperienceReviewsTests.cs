@@ -15,7 +15,7 @@ namespace ReevooTests.Api
             // TODO: find a trkref that returns results
             var response = reevooApi.CustomerExperienceReview.List("D10");
 
-            response.customer_experience_reviews.Count.ShouldBeGreaterThan(0);
+            response.CustomerExperienceReviews.Count.ShouldBeGreaterThan(0);
         }
 
         [TestMethod]

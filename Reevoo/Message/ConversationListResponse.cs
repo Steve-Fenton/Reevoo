@@ -1,11 +1,15 @@
-﻿using Reevoo.Model;
+﻿using Newtonsoft.Json;
+using Reevoo.Model;
 using System.Collections.Generic;
 
 namespace Reevoo.Message
 {
     public class ConversationListResponse
     {
-        public Summary summary { get; set; }
-        public List<Conversation> conversations { get; set; }
+        [JsonProperty(PropertyName = "summary")]
+        public Summary Summary { get; set; }
+
+        [JsonProperty(PropertyName = "conversations")]
+        public List<Conversation> Conversations { get; set; }
     }
 }

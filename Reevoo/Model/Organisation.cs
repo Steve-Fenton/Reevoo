@@ -1,9 +1,16 @@
-﻿namespace Reevoo.Model
+﻿using Newtonsoft.Json;
+
+namespace Reevoo.Model
 {
     public class Organisation
     {
-        public string trkref { get; set; }
-        public string name { get; set; }
-        public string logo { get; set; }
+        [JsonProperty(PropertyName = "trkref")]
+        public string Trkref { get; set; }
+
+        [JsonProperty(PropertyName = "name")]
+        public string Name { get; set; }
+
+        [JsonProperty(PropertyName = "logo")]
+        public string Logo { get; set; }
     }
 }

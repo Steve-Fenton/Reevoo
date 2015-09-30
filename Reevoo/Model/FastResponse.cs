@@ -1,9 +1,16 @@
-﻿namespace Reevoo.Model
+﻿using Newtonsoft.Json;
+
+namespace Reevoo.Model
 {
     public class FastResponse
     {
-        public string response { get; set; }
-        public Respondent respondent { get; set; }
-        public Organisation organisation { get; set; }
+        [JsonProperty(PropertyName = "response")]
+        public string Response { get; set; }
+
+        [JsonProperty(PropertyName = "respondent")]
+        public Respondent Respondent { get; set; }
+
+        [JsonProperty(PropertyName = "organisation")]
+        public Organisation Organisation { get; set; }
     }
 }

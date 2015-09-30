@@ -1,12 +1,20 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace Reevoo.Model
 {
     public class CustomerExperienceReview
     {
-        public object branch_attribution { get; set; }
-        public string purchase_date { get; set; }
-        public Reviewer reviewer { get; set; }
-        public List<Response> responses { get; set; }
+        [JsonProperty(PropertyName = "branch_attribution")]
+        public string BranchAttribution { get; set; }
+
+        [JsonProperty(PropertyName = "purchase_date")]
+        public string PurchaseDate { get; set; }
+
+        [JsonProperty(PropertyName = "reviewer")]
+        public Reviewer Reviewer { get; set; }
+
+        [JsonProperty(PropertyName = "responses")]
+        public List<Response> Responses { get; set; }
     }
 }

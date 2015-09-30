@@ -1,8 +1,13 @@
-﻿namespace Reevoo.Model
+﻿using Newtonsoft.Json;
+
+namespace Reevoo.Model
 {
     public class Response
     {
-        public string display_key { get; set; }
-        public object answer { get; set; }
+        [JsonProperty(PropertyName = "display_key")]
+        public string DisplayKey { get; set; }
+
+        [JsonProperty(PropertyName = "answer")]
+        public string Answer { get; set; }
     }
 }

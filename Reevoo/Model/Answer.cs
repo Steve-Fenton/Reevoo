@@ -1,21 +1,52 @@
-﻿namespace Reevoo.Model
+﻿using Newtonsoft.Json;
+
+namespace Reevoo.Model
 {
     public class Answer
     {
-        public int id { get; set; }
-        public string response { get; set; }
-        public string created_at { get; set; }
-        public string first_name { get; set; }
-        public string town { get; set; }
-        public object job_title { get; set; }
-        public string reviewer_segment { get; set; }
-        public int helpful { get; set; }
-        public int unhelpful { get; set; }
-        public string review_url { get; set; }
-        public string review_locale { get; set; }
-        public object reviewer_facebook_url { get; set; }
-        public string response_type { get; set; }
-        public object retailer_name { get; set; }
-        public object retailer_image_url { get; set; }
+        [JsonProperty(PropertyName = "id")]
+        public int Id { get; set; }
+
+        [JsonProperty(PropertyName = "response")]
+        public string Response { get; set; }
+
+        [JsonProperty(PropertyName = "created_at")]
+        public string CreatedAt { get; set; }
+
+        [JsonProperty(PropertyName = "first_name")]
+        public string FirstName { get; set; }
+
+        [JsonProperty(PropertyName = "town")]
+        public string Town { get; set; }
+
+        [JsonProperty(PropertyName = "job_title")]
+        public string JobTitle { get; set; }
+
+        [JsonProperty(PropertyName = "reviewer_segment")]
+        public string ReviewerSegment { get; set; }
+
+        [JsonProperty(PropertyName = "helpful")]
+        public int Helpful { get; set; }
+
+        [JsonProperty(PropertyName = "unhelpful")]
+        public int Unhelpful { get; set; }
+
+        [JsonProperty(PropertyName = "review_url")]
+        public string ReviewUrl { get; set; }
+
+        [JsonProperty(PropertyName = "review_locale")]
+        public string ReviewLocale { get; set; }
+
+        [JsonProperty(PropertyName = "reviewer_facebook_url")]
+        public string ReviewerFacebookUrl { get; set; }
+
+        [JsonProperty(PropertyName = "response_type")]
+        public string ResponseType { get; set; }
+
+        [JsonProperty(PropertyName = "retailer_name")]
+        public string RetailerName { get; set; }
+
+        [JsonProperty(PropertyName = "retailer_image_url")]
+        public string RetailerImageUrl { get; set; }
     }
 }

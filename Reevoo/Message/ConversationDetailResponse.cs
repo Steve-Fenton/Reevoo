@@ -1,19 +1,39 @@
-﻿using Reevoo.Model;
+﻿using Newtonsoft.Json;
+using Reevoo.Model;
 using System.Collections.Generic;
 
 namespace Reevoo.Message
 {
     public class ConversationDetailResponse
     {
-        public int id { get; set; }
-        public string first_name { get; set; }
-        public string question { get; set; }
-        public string created_at { get; set; }
-        public int helpful { get; set; }
-        public int unhelpful { get; set; }
-        public bool embeddable { get; set; }
-        public string retailer_locale { get; set; }
-        public int answers_count { get; set; }
-        public List<Answer> answers { get; set; }
+        [JsonProperty(PropertyName = "id")]
+        public int Id { get; set; }
+
+        [JsonProperty(PropertyName = "first_name")]
+        public string FirstName { get; set; }
+
+        [JsonProperty(PropertyName = "question")]
+        public string Question { get; set; }
+
+        [JsonProperty(PropertyName = "created_at")]
+        public string CreatedAt { get; set; }
+
+        [JsonProperty(PropertyName = "helpful")]
+        public int Helpful { get; set; }
+
+        [JsonProperty(PropertyName = "unhelpful")]
+        public int Unhelpful { get; set; }
+
+        [JsonProperty(PropertyName = "embeddable")]
+        public bool Embeddable { get; set; }
+
+        [JsonProperty(PropertyName = "retailer_locale")]
+        public string RetailerLocale { get; set; }
+
+        [JsonProperty(PropertyName = "answers_count")]
+        public int AnswersCount { get; set; }
+
+        [JsonProperty(PropertyName = "answers")]
+        public List<Answer> Answers { get; set; }
     }
 }
