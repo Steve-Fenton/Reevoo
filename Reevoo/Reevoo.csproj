@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1D6BACA-108B-46D4-B530-F76F254BF248}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Reevoo</RootNamespace>
+    <AssemblyName>Reevoo</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\ApiBase.cs" />
+    <Compile Include="Api\OrganisationApi.cs" />
+    <Compile Include="Api\ReviewableApi.cs" />
+    <Compile Include="Api\ConversationApi.cs" />
+    <Compile Include="Message\ConversationDetailResponse.cs" />
+    <Compile Include="Message\ConversationListResponse.cs" />
+    <Compile Include="Message\CustomerExperienceReviewDetailResponse.cs" />
+    <Compile Include="Message\OrganisationListResponse.cs" />
+    <Compile Include="Message\OrganisationDetailResponse.cs" />
+    <Compile Include="Message\ReviewableDetailResponse.cs" />
+    <Compile Include="Message\ReviewableShortFormatListResponse.cs" />
+    <Compile Include="Message\ReviewableListResponse.cs" />
+    <Compile Include="Message\ReviewableShortFormatDetailResponse.cs" />
+    <Compile Include="Model\Answer.cs" />
+    <Compile Include="Model\Conversation.cs" />
+    <Compile Include="Model\CustomerExperienceScores.cs" />
+    <Compile Include="Model\CustomerExperienceReview.cs" />
+    <Compile Include="Model\FastResponse.cs" />
+    <Compile Include="Model\FinderOptions.cs" />
+    <Compile Include="Model\Review.cs" />
+    <Compile Include="Model\ReviewableCondensed.cs" />
+    <Compile Include="Model\Reviewable.cs" />
+    <Compile Include="Model\Reviewer.cs" />
+    <Compile Include="Model\Summary.cs" />
+    <Compile Include="Model\Pagination.cs" />
+    <Compile Include="Model\Facet.cs" />
+    <Compile Include="Model\Statistics.cs" />
+    <Compile Include="Model\Organisation.cs" />
+    <Compile Include="Model\Respondent.cs" />
+    <Compile Include="Model\Response.cs" />
+    <Compile Include="Message\ReviewDetailResponse.cs" />
+    <Compile Include="Message\CustomerExperienceReviewListResponse.cs" />
+    <Compile Include="Message\ReviewListResponse.cs" />
+    <Compile Include="Api\ReevooApi.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Api\CustomerExperienceReviewApi.cs" />
+    <Compile Include="Api\ReviewApi.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="API.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

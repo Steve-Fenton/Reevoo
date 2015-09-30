@@ -1,0 +1,30 @@
+﻿Reevoo API Progress
+
+All read-only methods created. Need some test data for a few of them.
+
+    ✔ Organisation
+        ✅ list
+        ✅ detail
+    ✔ Reviewable
+        ✅ list
+        ✅ short format list
+        ✅ detail
+        ✅ short format detail
+    ✔ Review
+        ✅ list
+        ✅ detail
+    ✔ Customer Exp. Review
+        ✅ list
+        ✅ detail
+    Conversation
+        ✅ list
+        ✅ detail
+        create
+        upvote question
+        downvote question
+        upvote answer
+        downvote answer
+    Customer Order
+        Single submission
+        Batch submission
+

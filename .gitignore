@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*.suo
+/ReevooTests/bin/Debug
+/ReevooTests/obj/Debug
+/Reevoo/obj/Debug
+/Reevoo/bin/Debug
+/packages
